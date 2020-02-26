@@ -29,7 +29,7 @@
 // -------------------------------------------------------
 // Uncomment this line if you want to use soft serial
 //#define USE_SOFT_SERIAL
-#define BOARDS_V10 // Uncomments for very old boards versiob (1.0)
+//#define BOARDS_V10 // Uncomments for very old boards versiob (1.0)
 
 #ifdef BOARDS_V10
   #define RN2483_RESET_PIN 15
@@ -129,6 +129,3 @@ bool handleSerial(bool _async);
 bool sendData(bool _ack);
 
 #endif
-
-
-

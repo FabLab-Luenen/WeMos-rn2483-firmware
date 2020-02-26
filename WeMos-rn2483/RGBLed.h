@@ -47,7 +47,7 @@ RgbEffectState_e;
 
 // RGB Led on GPIO0
 #define RGB_LED_PIN 	0
-#define RGB_LED_COUNT 2
+#define RGB_LED_COUNT 1
 #define RGBW_LED 	/* I'm using a RGBW WS2812 led */
 
 // Master RDB LED

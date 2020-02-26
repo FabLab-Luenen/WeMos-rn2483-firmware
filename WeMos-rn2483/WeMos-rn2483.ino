@@ -31,25 +31,27 @@
 // Main project include file
 #include "WeMos-rn2483.h"
 
+#define SW_SERIAL_UNUSED_PIN -1
+
 // If you want to use soft serial, not super reliable with AsyncTCP
 // RN2483 TX is default connected to ESP8266 GPIO13 (or RX depends on solder pad)
 // RN2483 RX is default connected to ESP8266 GPIO15 (or TX depends on solder pad)
 #ifdef USE_SOFT_SERIAL
 SoftwareSerial RN2483Serial(13, 15, false, 128);
 #else
-//SoftwareSerial DebugSerial(SW_SERIAL_UNUSED_PIN ,14, false, 128);
+//SoftwareSerial DebugSerial(SW_SERIAL_UNUSED_PIN ,14, false);
 #ifdef BOARDS_V10
 // 1.0 can use TXD1 on GPIO2 (Serial1)
 #else
 // 1.1+ has switch on TXD1 (GPIO2) but swapped RX/TX so we debug
 // with software Serial on pin1 (TX)like this serial monitor works fine
 #define SW_SERIAL_TX_PIN  1
-SoftwareSerial DebugSerial(SW_SERIAL_UNUSED_PIN , SW_SERIAL_TX_PIN , false, 128);
+SoftwareSerial DebugSerial(SW_SERIAL_UNUSED_PIN , SW_SERIAL_TX_PIN , false);
 #endif
 #endif
 
-const char* ssid = "*******";
-const char* password = "*******";
+const char* ssid = "********";
+const char* password = "********";
 
 // Http SPIFFS editor password/login
 const char* http_username = "admin";
